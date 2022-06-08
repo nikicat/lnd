@@ -85,12 +85,13 @@ func RegisterStateHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/lnrpc.State/GetState", runtime.WithHTTPPathPattern("/v1/state"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/lnrpc.State/GetState", runtime.WithHTTPPathPattern("/v1/state"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_State_GetState_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_State_GetState_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -147,12 +148,13 @@ func RegisterStateHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/lnrpc.State/SubscribeState", runtime.WithHTTPPathPattern("/v1/state/subscribe"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/lnrpc.State/SubscribeState", runtime.WithHTTPPathPattern("/v1/state/subscribe"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_State_SubscribeState_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_State_SubscribeState_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -167,12 +169,13 @@ func RegisterStateHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/lnrpc.State/GetState", runtime.WithHTTPPathPattern("/v1/state"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/lnrpc.State/GetState", runtime.WithHTTPPathPattern("/v1/state"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_State_GetState_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_State_GetState_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

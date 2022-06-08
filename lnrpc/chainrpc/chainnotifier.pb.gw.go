@@ -178,12 +178,13 @@ func RegisterChainNotifierHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/chainrpc.ChainNotifier/RegisterConfirmationsNtfn", runtime.WithHTTPPathPattern("/v2/chainnotifier/register/confirmations"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/chainrpc.ChainNotifier/RegisterConfirmationsNtfn", runtime.WithHTTPPathPattern("/v2/chainnotifier/register/confirmations"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ChainNotifier_RegisterConfirmationsNtfn_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ChainNotifier_RegisterConfirmationsNtfn_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -198,12 +199,13 @@ func RegisterChainNotifierHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/chainrpc.ChainNotifier/RegisterSpendNtfn", runtime.WithHTTPPathPattern("/v2/chainnotifier/register/spends"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/chainrpc.ChainNotifier/RegisterSpendNtfn", runtime.WithHTTPPathPattern("/v2/chainnotifier/register/spends"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ChainNotifier_RegisterSpendNtfn_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ChainNotifier_RegisterSpendNtfn_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -218,12 +220,13 @@ func RegisterChainNotifierHandlerClient(ctx context.Context, mux *runtime.ServeM
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/chainrpc.ChainNotifier/RegisterBlockEpochNtfn", runtime.WithHTTPPathPattern("/v2/chainnotifier/register/blocks"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/chainrpc.ChainNotifier/RegisterBlockEpochNtfn", runtime.WithHTTPPathPattern("/v2/chainnotifier/register/blocks"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ChainNotifier_RegisterBlockEpochNtfn_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ChainNotifier_RegisterBlockEpochNtfn_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

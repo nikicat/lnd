@@ -417,12 +417,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/SignOutputRaw", runtime.WithHTTPPathPattern("/v2/signer/signraw"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/SignOutputRaw", runtime.WithHTTPPathPattern("/v2/signer/signraw"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_SignOutputRaw_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_SignOutputRaw_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -440,12 +441,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/ComputeInputScript", runtime.WithHTTPPathPattern("/v2/signer/inputscript"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/ComputeInputScript", runtime.WithHTTPPathPattern("/v2/signer/inputscript"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_ComputeInputScript_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_ComputeInputScript_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -463,12 +465,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/SignMessage", runtime.WithHTTPPathPattern("/v2/signer/signmessage"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/SignMessage", runtime.WithHTTPPathPattern("/v2/signer/signmessage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_SignMessage_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_SignMessage_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -486,12 +489,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/VerifyMessage", runtime.WithHTTPPathPattern("/v2/signer/verifymessage"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/VerifyMessage", runtime.WithHTTPPathPattern("/v2/signer/verifymessage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_VerifyMessage_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_VerifyMessage_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -509,12 +513,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/DeriveSharedKey", runtime.WithHTTPPathPattern("/v2/signer/sharedkey"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/DeriveSharedKey", runtime.WithHTTPPathPattern("/v2/signer/sharedkey"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_DeriveSharedKey_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_DeriveSharedKey_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -532,12 +537,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2CombineKeys", runtime.WithHTTPPathPattern("/v2/signer/musig2/combinekeys"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2CombineKeys", runtime.WithHTTPPathPattern("/v2/signer/musig2/combinekeys"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_MuSig2CombineKeys_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_MuSig2CombineKeys_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -555,12 +561,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2CreateSession", runtime.WithHTTPPathPattern("/v2/signer/musig2/createsession"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2CreateSession", runtime.WithHTTPPathPattern("/v2/signer/musig2/createsession"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_MuSig2CreateSession_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_MuSig2CreateSession_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -578,12 +585,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2RegisterNonces", runtime.WithHTTPPathPattern("/v2/signer/musig2/registernonces"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2RegisterNonces", runtime.WithHTTPPathPattern("/v2/signer/musig2/registernonces"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_MuSig2RegisterNonces_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_MuSig2RegisterNonces_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -601,12 +609,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2Sign", runtime.WithHTTPPathPattern("/v2/signer/musig2/sign"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2Sign", runtime.WithHTTPPathPattern("/v2/signer/musig2/sign"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_MuSig2Sign_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_MuSig2Sign_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -624,12 +633,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2CombineSig", runtime.WithHTTPPathPattern("/v2/signer/musig2/combinesig"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2CombineSig", runtime.WithHTTPPathPattern("/v2/signer/musig2/combinesig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_MuSig2CombineSig_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_MuSig2CombineSig_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -647,12 +657,13 @@ func RegisterSignerHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2Cleanup", runtime.WithHTTPPathPattern("/v2/signer/musig2/cleanup"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/signrpc.Signer/MuSig2Cleanup", runtime.WithHTTPPathPattern("/v2/signer/musig2/cleanup"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Signer_MuSig2Cleanup_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Signer_MuSig2Cleanup_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -709,12 +720,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/SignOutputRaw", runtime.WithHTTPPathPattern("/v2/signer/signraw"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/SignOutputRaw", runtime.WithHTTPPathPattern("/v2/signer/signraw"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_SignOutputRaw_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_SignOutputRaw_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -729,12 +741,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/ComputeInputScript", runtime.WithHTTPPathPattern("/v2/signer/inputscript"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/ComputeInputScript", runtime.WithHTTPPathPattern("/v2/signer/inputscript"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_ComputeInputScript_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_ComputeInputScript_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -749,12 +762,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/SignMessage", runtime.WithHTTPPathPattern("/v2/signer/signmessage"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/SignMessage", runtime.WithHTTPPathPattern("/v2/signer/signmessage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_SignMessage_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_SignMessage_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -769,12 +783,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/VerifyMessage", runtime.WithHTTPPathPattern("/v2/signer/verifymessage"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/VerifyMessage", runtime.WithHTTPPathPattern("/v2/signer/verifymessage"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_VerifyMessage_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_VerifyMessage_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -789,12 +804,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/DeriveSharedKey", runtime.WithHTTPPathPattern("/v2/signer/sharedkey"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/DeriveSharedKey", runtime.WithHTTPPathPattern("/v2/signer/sharedkey"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_DeriveSharedKey_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_DeriveSharedKey_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -809,12 +825,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2CombineKeys", runtime.WithHTTPPathPattern("/v2/signer/musig2/combinekeys"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2CombineKeys", runtime.WithHTTPPathPattern("/v2/signer/musig2/combinekeys"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_MuSig2CombineKeys_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_MuSig2CombineKeys_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -829,12 +846,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2CreateSession", runtime.WithHTTPPathPattern("/v2/signer/musig2/createsession"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2CreateSession", runtime.WithHTTPPathPattern("/v2/signer/musig2/createsession"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_MuSig2CreateSession_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_MuSig2CreateSession_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -849,12 +867,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2RegisterNonces", runtime.WithHTTPPathPattern("/v2/signer/musig2/registernonces"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2RegisterNonces", runtime.WithHTTPPathPattern("/v2/signer/musig2/registernonces"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_MuSig2RegisterNonces_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_MuSig2RegisterNonces_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -869,12 +888,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2Sign", runtime.WithHTTPPathPattern("/v2/signer/musig2/sign"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2Sign", runtime.WithHTTPPathPattern("/v2/signer/musig2/sign"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_MuSig2Sign_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_MuSig2Sign_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -889,12 +909,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2CombineSig", runtime.WithHTTPPathPattern("/v2/signer/musig2/combinesig"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2CombineSig", runtime.WithHTTPPathPattern("/v2/signer/musig2/combinesig"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_MuSig2CombineSig_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_MuSig2CombineSig_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -909,12 +930,13 @@ func RegisterSignerHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2Cleanup", runtime.WithHTTPPathPattern("/v2/signer/musig2/cleanup"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/signrpc.Signer/MuSig2Cleanup", runtime.WithHTTPPathPattern("/v2/signer/musig2/cleanup"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Signer_MuSig2Cleanup_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Signer_MuSig2Cleanup_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

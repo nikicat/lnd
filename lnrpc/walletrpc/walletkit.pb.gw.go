@@ -714,12 +714,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ListUnspent", runtime.WithHTTPPathPattern("/v2/wallet/utxos"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ListUnspent", runtime.WithHTTPPathPattern("/v2/wallet/utxos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_ListUnspent_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_ListUnspent_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -737,12 +738,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/LeaseOutput", runtime.WithHTTPPathPattern("/v2/wallet/utxos/lease"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/LeaseOutput", runtime.WithHTTPPathPattern("/v2/wallet/utxos/lease"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_LeaseOutput_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_LeaseOutput_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -760,12 +762,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ReleaseOutput", runtime.WithHTTPPathPattern("/v2/wallet/utxos/release"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ReleaseOutput", runtime.WithHTTPPathPattern("/v2/wallet/utxos/release"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_ReleaseOutput_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_ReleaseOutput_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -783,12 +786,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ListLeases", runtime.WithHTTPPathPattern("/v2/wallet/utxos/leases"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ListLeases", runtime.WithHTTPPathPattern("/v2/wallet/utxos/leases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_ListLeases_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_ListLeases_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -806,12 +810,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/DeriveNextKey", runtime.WithHTTPPathPattern("/v2/wallet/key/next"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/DeriveNextKey", runtime.WithHTTPPathPattern("/v2/wallet/key/next"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_DeriveNextKey_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_DeriveNextKey_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -829,12 +834,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/DeriveKey", runtime.WithHTTPPathPattern("/v2/wallet/key"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/DeriveKey", runtime.WithHTTPPathPattern("/v2/wallet/key"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_DeriveKey_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_DeriveKey_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -852,12 +858,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/NextAddr", runtime.WithHTTPPathPattern("/v2/wallet/address/next"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/NextAddr", runtime.WithHTTPPathPattern("/v2/wallet/address/next"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_NextAddr_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_NextAddr_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -875,12 +882,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ListAccounts", runtime.WithHTTPPathPattern("/v2/wallet/accounts"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ListAccounts", runtime.WithHTTPPathPattern("/v2/wallet/accounts"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_ListAccounts_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_ListAccounts_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -898,12 +906,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ImportAccount", runtime.WithHTTPPathPattern("/v2/wallet/accounts/import"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ImportAccount", runtime.WithHTTPPathPattern("/v2/wallet/accounts/import"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_ImportAccount_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_ImportAccount_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -921,12 +930,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ImportPublicKey", runtime.WithHTTPPathPattern("/v2/wallet/key/import"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ImportPublicKey", runtime.WithHTTPPathPattern("/v2/wallet/key/import"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_ImportPublicKey_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_ImportPublicKey_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -944,12 +954,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/PublishTransaction", runtime.WithHTTPPathPattern("/v2/wallet/tx"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/PublishTransaction", runtime.WithHTTPPathPattern("/v2/wallet/tx"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_PublishTransaction_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_PublishTransaction_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -967,12 +978,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/SendOutputs", runtime.WithHTTPPathPattern("/v2/wallet/send"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/SendOutputs", runtime.WithHTTPPathPattern("/v2/wallet/send"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_SendOutputs_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_SendOutputs_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -990,12 +1002,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/EstimateFee", runtime.WithHTTPPathPattern("/v2/wallet/estimatefee/{conf_target}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/EstimateFee", runtime.WithHTTPPathPattern("/v2/wallet/estimatefee/{conf_target}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_EstimateFee_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_EstimateFee_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1013,12 +1026,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/PendingSweeps", runtime.WithHTTPPathPattern("/v2/wallet/sweeps/pending"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/PendingSweeps", runtime.WithHTTPPathPattern("/v2/wallet/sweeps/pending"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_PendingSweeps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_PendingSweeps_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1036,12 +1050,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/BumpFee", runtime.WithHTTPPathPattern("/v2/wallet/bumpfee"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/BumpFee", runtime.WithHTTPPathPattern("/v2/wallet/bumpfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_BumpFee_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_BumpFee_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1059,12 +1074,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ListSweeps", runtime.WithHTTPPathPattern("/v2/wallet/sweeps"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/ListSweeps", runtime.WithHTTPPathPattern("/v2/wallet/sweeps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_ListSweeps_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_ListSweeps_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1082,12 +1098,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/LabelTransaction", runtime.WithHTTPPathPattern("/v2/wallet/tx/label"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/LabelTransaction", runtime.WithHTTPPathPattern("/v2/wallet/tx/label"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_LabelTransaction_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_LabelTransaction_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1105,12 +1122,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/FundPsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/fund"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/FundPsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/fund"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_FundPsbt_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_FundPsbt_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1128,12 +1146,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/SignPsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/sign"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/SignPsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/sign"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_SignPsbt_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_SignPsbt_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1151,12 +1170,13 @@ func RegisterWalletKitHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/FinalizePsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/finalize"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/walletrpc.WalletKit/FinalizePsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/finalize"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_WalletKit_FinalizePsbt_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_WalletKit_FinalizePsbt_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -1213,12 +1233,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ListUnspent", runtime.WithHTTPPathPattern("/v2/wallet/utxos"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ListUnspent", runtime.WithHTTPPathPattern("/v2/wallet/utxos"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_ListUnspent_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_ListUnspent_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1233,12 +1254,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/LeaseOutput", runtime.WithHTTPPathPattern("/v2/wallet/utxos/lease"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/LeaseOutput", runtime.WithHTTPPathPattern("/v2/wallet/utxos/lease"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_LeaseOutput_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_LeaseOutput_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1253,12 +1275,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ReleaseOutput", runtime.WithHTTPPathPattern("/v2/wallet/utxos/release"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ReleaseOutput", runtime.WithHTTPPathPattern("/v2/wallet/utxos/release"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_ReleaseOutput_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_ReleaseOutput_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1273,12 +1296,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ListLeases", runtime.WithHTTPPathPattern("/v2/wallet/utxos/leases"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ListLeases", runtime.WithHTTPPathPattern("/v2/wallet/utxos/leases"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_ListLeases_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_ListLeases_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1293,12 +1317,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/DeriveNextKey", runtime.WithHTTPPathPattern("/v2/wallet/key/next"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/DeriveNextKey", runtime.WithHTTPPathPattern("/v2/wallet/key/next"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_DeriveNextKey_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_DeriveNextKey_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1313,12 +1338,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/DeriveKey", runtime.WithHTTPPathPattern("/v2/wallet/key"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/DeriveKey", runtime.WithHTTPPathPattern("/v2/wallet/key"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_DeriveKey_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_DeriveKey_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1333,12 +1359,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/NextAddr", runtime.WithHTTPPathPattern("/v2/wallet/address/next"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/NextAddr", runtime.WithHTTPPathPattern("/v2/wallet/address/next"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_NextAddr_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_NextAddr_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1353,12 +1380,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ListAccounts", runtime.WithHTTPPathPattern("/v2/wallet/accounts"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ListAccounts", runtime.WithHTTPPathPattern("/v2/wallet/accounts"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_ListAccounts_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_ListAccounts_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1373,12 +1401,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ImportAccount", runtime.WithHTTPPathPattern("/v2/wallet/accounts/import"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ImportAccount", runtime.WithHTTPPathPattern("/v2/wallet/accounts/import"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_ImportAccount_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_ImportAccount_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1393,12 +1422,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ImportPublicKey", runtime.WithHTTPPathPattern("/v2/wallet/key/import"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ImportPublicKey", runtime.WithHTTPPathPattern("/v2/wallet/key/import"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_ImportPublicKey_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_ImportPublicKey_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1413,12 +1443,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/PublishTransaction", runtime.WithHTTPPathPattern("/v2/wallet/tx"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/PublishTransaction", runtime.WithHTTPPathPattern("/v2/wallet/tx"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_PublishTransaction_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_PublishTransaction_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1433,12 +1464,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/SendOutputs", runtime.WithHTTPPathPattern("/v2/wallet/send"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/SendOutputs", runtime.WithHTTPPathPattern("/v2/wallet/send"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_SendOutputs_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_SendOutputs_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1453,12 +1485,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/EstimateFee", runtime.WithHTTPPathPattern("/v2/wallet/estimatefee/{conf_target}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/EstimateFee", runtime.WithHTTPPathPattern("/v2/wallet/estimatefee/{conf_target}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_EstimateFee_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_EstimateFee_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1473,12 +1506,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/PendingSweeps", runtime.WithHTTPPathPattern("/v2/wallet/sweeps/pending"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/PendingSweeps", runtime.WithHTTPPathPattern("/v2/wallet/sweeps/pending"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_PendingSweeps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_PendingSweeps_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1493,12 +1527,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/BumpFee", runtime.WithHTTPPathPattern("/v2/wallet/bumpfee"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/BumpFee", runtime.WithHTTPPathPattern("/v2/wallet/bumpfee"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_BumpFee_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_BumpFee_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1513,12 +1548,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ListSweeps", runtime.WithHTTPPathPattern("/v2/wallet/sweeps"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/ListSweeps", runtime.WithHTTPPathPattern("/v2/wallet/sweeps"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_ListSweeps_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_ListSweeps_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1533,12 +1569,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/LabelTransaction", runtime.WithHTTPPathPattern("/v2/wallet/tx/label"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/LabelTransaction", runtime.WithHTTPPathPattern("/v2/wallet/tx/label"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_LabelTransaction_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_LabelTransaction_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1553,12 +1590,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/FundPsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/fund"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/FundPsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/fund"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_FundPsbt_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_FundPsbt_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1573,12 +1611,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/SignPsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/sign"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/SignPsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/sign"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_SignPsbt_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_SignPsbt_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1593,12 +1632,13 @@ func RegisterWalletKitHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/FinalizePsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/finalize"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/walletrpc.WalletKit/FinalizePsbt", runtime.WithHTTPPathPattern("/v2/wallet/psbt/finalize"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletKit_FinalizePsbt_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletKit_FinalizePsbt_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

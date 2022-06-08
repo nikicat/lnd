@@ -321,12 +321,13 @@ func RegisterNeutrinoKitHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/Status", runtime.WithHTTPPathPattern("/v2/neutrino/status"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/Status", runtime.WithHTTPPathPattern("/v2/neutrino/status"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_NeutrinoKit_Status_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_NeutrinoKit_Status_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -344,12 +345,13 @@ func RegisterNeutrinoKitHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/AddPeer", runtime.WithHTTPPathPattern("/v2/neutrino/addpeer"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/AddPeer", runtime.WithHTTPPathPattern("/v2/neutrino/addpeer"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_NeutrinoKit_AddPeer_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_NeutrinoKit_AddPeer_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -367,12 +369,13 @@ func RegisterNeutrinoKitHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/DisconnectPeer", runtime.WithHTTPPathPattern("/v2/neutrino/disconnect"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/DisconnectPeer", runtime.WithHTTPPathPattern("/v2/neutrino/disconnect"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_NeutrinoKit_DisconnectPeer_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_NeutrinoKit_DisconnectPeer_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -390,12 +393,13 @@ func RegisterNeutrinoKitHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/IsBanned", runtime.WithHTTPPathPattern("/v2/neutrino/isbanned"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/IsBanned", runtime.WithHTTPPathPattern("/v2/neutrino/isbanned"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_NeutrinoKit_IsBanned_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_NeutrinoKit_IsBanned_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -413,12 +417,13 @@ func RegisterNeutrinoKitHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetBlockHeader", runtime.WithHTTPPathPattern("/v2/neutrino/blockheader/{hash}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetBlockHeader", runtime.WithHTTPPathPattern("/v2/neutrino/blockheader/{hash}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_NeutrinoKit_GetBlockHeader_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_NeutrinoKit_GetBlockHeader_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -436,12 +441,13 @@ func RegisterNeutrinoKitHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetBlock", runtime.WithHTTPPathPattern("/v2/neutrino/block/{hash}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetBlock", runtime.WithHTTPPathPattern("/v2/neutrino/block/{hash}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_NeutrinoKit_GetBlock_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_NeutrinoKit_GetBlock_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -459,12 +465,13 @@ func RegisterNeutrinoKitHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetCFilter", runtime.WithHTTPPathPattern("/v2/neutrino/cfilter/{hash}"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetCFilter", runtime.WithHTTPPathPattern("/v2/neutrino/cfilter/{hash}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_NeutrinoKit_GetCFilter_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_NeutrinoKit_GetCFilter_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -521,12 +528,13 @@ func RegisterNeutrinoKitHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/Status", runtime.WithHTTPPathPattern("/v2/neutrino/status"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/Status", runtime.WithHTTPPathPattern("/v2/neutrino/status"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_NeutrinoKit_Status_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_NeutrinoKit_Status_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -541,12 +549,13 @@ func RegisterNeutrinoKitHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/AddPeer", runtime.WithHTTPPathPattern("/v2/neutrino/addpeer"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/AddPeer", runtime.WithHTTPPathPattern("/v2/neutrino/addpeer"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_NeutrinoKit_AddPeer_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_NeutrinoKit_AddPeer_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -561,12 +570,13 @@ func RegisterNeutrinoKitHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/DisconnectPeer", runtime.WithHTTPPathPattern("/v2/neutrino/disconnect"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/DisconnectPeer", runtime.WithHTTPPathPattern("/v2/neutrino/disconnect"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_NeutrinoKit_DisconnectPeer_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_NeutrinoKit_DisconnectPeer_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -581,12 +591,13 @@ func RegisterNeutrinoKitHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/IsBanned", runtime.WithHTTPPathPattern("/v2/neutrino/isbanned"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/IsBanned", runtime.WithHTTPPathPattern("/v2/neutrino/isbanned"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_NeutrinoKit_IsBanned_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_NeutrinoKit_IsBanned_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -601,12 +612,13 @@ func RegisterNeutrinoKitHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetBlockHeader", runtime.WithHTTPPathPattern("/v2/neutrino/blockheader/{hash}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetBlockHeader", runtime.WithHTTPPathPattern("/v2/neutrino/blockheader/{hash}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_NeutrinoKit_GetBlockHeader_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_NeutrinoKit_GetBlockHeader_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -621,12 +633,13 @@ func RegisterNeutrinoKitHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetBlock", runtime.WithHTTPPathPattern("/v2/neutrino/block/{hash}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetBlock", runtime.WithHTTPPathPattern("/v2/neutrino/block/{hash}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_NeutrinoKit_GetBlock_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_NeutrinoKit_GetBlock_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -641,12 +654,13 @@ func RegisterNeutrinoKitHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetCFilter", runtime.WithHTTPPathPattern("/v2/neutrino/cfilter/{hash}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/neutrinorpc.NeutrinoKit/GetCFilter", runtime.WithHTTPPathPattern("/v2/neutrino/cfilter/{hash}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_NeutrinoKit_GetCFilter_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_NeutrinoKit_GetCFilter_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)

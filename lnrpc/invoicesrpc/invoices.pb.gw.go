@@ -222,12 +222,13 @@ func RegisterInvoicesHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/invoicesrpc.Invoices/CancelInvoice", runtime.WithHTTPPathPattern("/v2/invoices/cancel"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/invoicesrpc.Invoices/CancelInvoice", runtime.WithHTTPPathPattern("/v2/invoices/cancel"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Invoices_CancelInvoice_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Invoices_CancelInvoice_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -245,12 +246,13 @@ func RegisterInvoicesHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/invoicesrpc.Invoices/AddHoldInvoice", runtime.WithHTTPPathPattern("/v2/invoices/hodl"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/invoicesrpc.Invoices/AddHoldInvoice", runtime.WithHTTPPathPattern("/v2/invoices/hodl"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Invoices_AddHoldInvoice_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Invoices_AddHoldInvoice_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -268,12 +270,13 @@ func RegisterInvoicesHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/invoicesrpc.Invoices/SettleInvoice", runtime.WithHTTPPathPattern("/v2/invoices/settle"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/invoicesrpc.Invoices/SettleInvoice", runtime.WithHTTPPathPattern("/v2/invoices/settle"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Invoices_SettleInvoice_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Invoices_SettleInvoice_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -291,12 +294,13 @@ func RegisterInvoicesHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/invoicesrpc.Invoices/LookupInvoiceV2", runtime.WithHTTPPathPattern("/v2/invoices/lookup"))
+		var err error
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/invoicesrpc.Invoices/LookupInvoiceV2", runtime.WithHTTPPathPattern("/v2/invoices/lookup"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Invoices_LookupInvoiceV2_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Invoices_LookupInvoiceV2_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -353,12 +357,13 @@ func RegisterInvoicesHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/SubscribeSingleInvoice", runtime.WithHTTPPathPattern("/v2/invoices/subscribe/{r_hash}"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/SubscribeSingleInvoice", runtime.WithHTTPPathPattern("/v2/invoices/subscribe/{r_hash}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Invoices_SubscribeSingleInvoice_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Invoices_SubscribeSingleInvoice_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -373,12 +378,13 @@ func RegisterInvoicesHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/CancelInvoice", runtime.WithHTTPPathPattern("/v2/invoices/cancel"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/CancelInvoice", runtime.WithHTTPPathPattern("/v2/invoices/cancel"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Invoices_CancelInvoice_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Invoices_CancelInvoice_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -393,12 +399,13 @@ func RegisterInvoicesHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/AddHoldInvoice", runtime.WithHTTPPathPattern("/v2/invoices/hodl"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/AddHoldInvoice", runtime.WithHTTPPathPattern("/v2/invoices/hodl"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Invoices_AddHoldInvoice_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Invoices_AddHoldInvoice_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -413,12 +420,13 @@ func RegisterInvoicesHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/SettleInvoice", runtime.WithHTTPPathPattern("/v2/invoices/settle"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/SettleInvoice", runtime.WithHTTPPathPattern("/v2/invoices/settle"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Invoices_SettleInvoice_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Invoices_SettleInvoice_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -433,12 +441,13 @@ func RegisterInvoicesHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/LookupInvoiceV2", runtime.WithHTTPPathPattern("/v2/invoices/lookup"))
+		var err error
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/invoicesrpc.Invoices/LookupInvoiceV2", runtime.WithHTTPPathPattern("/v2/invoices/lookup"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Invoices_LookupInvoiceV2_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Invoices_LookupInvoiceV2_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
