@@ -1452,7 +1452,7 @@ func (b *BtcWallet) IsSynced() (bool, int64, error) {
 	// still may not yet be synced as the chain backend may still be
 	// catching up to the main chain. So we'll grab the block header in
 	// order to make a guess based on the current time stamp.
-	blockHeader, err := b.cfg.ChainSource.GetBlockHeader(bestHash)
+	/*blockHeader, err := b.cfg.ChainSource.GetBlockHeader(bestHash)
 	if err != nil {
 		return false, 0, err
 	}
@@ -1462,7 +1462,7 @@ func (b *BtcWallet) IsSynced() (bool, int64, error) {
 	minus24Hours := time.Now().Add(-2 * time.Hour)
 	if blockHeader.Timestamp.Before(minus24Hours) {
 		return false, bestTimestamp, nil
-	}
+	}*/
 
 	return true, bestTimestamp, nil
 }
