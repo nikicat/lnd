@@ -568,7 +568,7 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 			return nil
 		}
 
-		synced, _, err := activeChainControl.Wallet.IsSynced()
+		synced, bestTimestamp, err := activeChainControl.Wallet.IsSynced()
 		if err != nil {
 			return mkErr("unable to determine if wallet is "+
 				"synced: %v", err)
@@ -577,6 +577,8 @@ func Main(cfg *Config, lisCfg ListenerCfg, implCfg *ImplementationCfg,
 		if synced {
 			break
 		}
+
+		ltndLog.Debugf("Wallet is not synced, best timestamp is %v", bestTimestamp)
 
 		time.Sleep(time.Second * 1)
 	}
